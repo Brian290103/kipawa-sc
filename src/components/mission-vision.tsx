@@ -30,7 +30,7 @@ const MissionVision = () => {
           <HeadLine title={"Mission and Vision"} />
         </div>
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-          Our Mission & Vision1
+          Our Mission & Vision
         </h2>
         <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
           A clear roadmap for our goals and aspirations.
