@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white text-gray-900 ">
+    <footer className="w-full bg-white border-t text-gray-900 ">
       <section className="flex  flex-col md:flex-row items-center justify-between gap-6 px-4 sm:px-6 lg:px-8 py-8 border-b">
         <h1 className="text-2xl font-bold">
           Join our newsletter to <br />
@@ -38,16 +38,16 @@ const Footer = () => {
       <section className="w-full py-8 px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-start gap-8">
         <article className="flex flex-col items-start gap-4">
           <Image
-            src={"/logo.png"}
-            alt={"Kipawa SC Logo"}
+            src={"/logo.jpg"}
+            alt={"Kipawa Soccer Academy Logo"}
             width={80}
             height={80}
             className="rounded-full"
           />
-          <h1 className="text-xl font-semibold">Kipawa SC</h1>
+          <h1 className="text-xl font-semibold">Kipawa Soccer Academy</h1>
           <p className="text-gray-600">
-            Kipawa SC is a leading football club dedicated to developing talent
-            and promoting the sport in Kenya.
+            Kipawa Soccer Academy is a leading football club dedicated to
+            developing talent and promoting the sport in Kenya.
           </p>
         </article>
 
@@ -140,7 +140,8 @@ const Footer = () => {
       <section className="w-full  py-6  px-4 sm:px-6 lg:px-8  border-t mt-8">
         <div className="flex flex-col sm:flex-row items-center justify-between">
           <p className="text-gray-600">
-            &copy; {new Date().getFullYear()} Kipawa SC. All rights reserved.
+            &copy; {new Date().getFullYear()} Kipawa Soccer Academy. All rights
+            reserved.
           </p>
 
           <div className="flex gap-4 text-gray-600">

@@ -1,25 +1,25 @@
 import React from "react";
-import { KipawaButton } from "@/components/kipawa-button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import HeadLine from "@/components/head-line";
+import { KipawaButton } from "@/components/kipawa-button";
 
 const AboutUs = () => {
   const teamInfo = [
     {
       title: "Our History",
       description:
-        "Founded in 2025, Kipawa Soccer Club has a rich history of developing young talent and competing at the highest levels in Kenyan football.",
+        "Founded in 2025, Kipawa Soccer Academy has a rich history of developing young talent and competing at the highest levels in Kenyan football.",
       imageUrl: "/image1.png",
-      alt: "Kipawa Soccer Club history",
+      alt: "Kipawa Soccer Academy history",
     },
     {
       title: "Our Approach",
       description:
         "We employ a holistic approach to player development, focusing on technical skills, tactical awareness, physical conditioning, and character building.",
       imageUrl: "/image2.png",
-      alt: "Kipawa Soccer Club approach",
+      alt: "Kipawa Soccer Academy approach",
     },
     {
       title: "Our Values",
@@ -32,7 +32,7 @@ const AboutUs = () => {
       title: "The Founder",
       description:
         "Founded by football legend Sammy Owino Kempes, our club is built on a legacy of excellence and a passion for the beautiful game.",
-      imageUrl: "/image4.png",
+      imageUrl: "/kempes.jpeg",
       alt: "Team huddle showcasing unity and motivation",
     },
   ];
@@ -51,14 +51,16 @@ const AboutUs = () => {
       <h1 className="text-3xl md:text-5xl font-bold">Who We Are</h1>
 
       <p className="max-w-2xl text-sm sm:text-base text-gray-600 leading-relaxed">
-        Kipawa Soccer Club is a dedicated organization committed to developing
-        young football talent. We provide a supportive and challenging
-        environment where players can grow their skills, build character, and
-        pursue their dreams. Our focus extends beyond the field, as we aim to
-        empower our athletes to become leaders in their communities.
+        Kipawa Soccer Academy is a dedicated organization committed to
+        developing young football talent. We provide a supportive and
+        challenging environment where players can grow their skills, build
+        character, and pursue their dreams. Our focus extends beyond the field,
+        as we aim to empower our athletes to become leaders in their
+        communities.
       </p>
 
-      <KipawaButton // Use the exported component
+      <KipawaButton
+        url={"/about"} // Use the exported component
         text="Learn More"
         colors={kenyanFlagColors}
         icon={<ArrowRight className="w-6 h-6 group-hover:ms-2 duration-300" />}
@@ -80,7 +82,7 @@ const AboutUs = () => {
                 alt={item.alt}
                 width={600}
                 height={400}
-                className="object-cover group-hover:scale-150 w-full duration-300 h-64"
+                className="object-cover object-top group-hover:scale-150 w-full duration-300 h-64"
               />
             </div>
             <div className="p-6">

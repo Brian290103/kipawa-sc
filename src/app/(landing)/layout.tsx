@@ -1,12 +1,11 @@
 import React from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import NotificationBar from "@/components/notification-bar";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      <NotificationBar />
+      {/*<NotificationBar />*/}
       <Navbar />
       {children}
       <Footer />

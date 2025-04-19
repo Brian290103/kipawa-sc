@@ -1,8 +1,10 @@
 import React from "react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface ButtonProps {
   text: string;
+  url: string;
   colors: {
     bg: string;
     text: string;
@@ -18,11 +20,13 @@ interface ButtonProps {
 export const KipawaButton: React.FC<ButtonProps> = ({
   text,
   colors,
+  url = "#",
   icon,
   className,
 }) => {
   return (
-    <button
+    <Link
+      href={url}
       className={cn(
         "px-5 py-3 md:py-5 flex  flex items-center justify-center duration-300 group items-center gap-4  rounded-full",
         `bg-${colors.bg}`,
@@ -37,6 +41,6 @@ export const KipawaButton: React.FC<ButtonProps> = ({
       {icon && ( // Render the icon if it exists
         <>{icon}</>
       )}
-    </button>
+    </Link>
   );
 };

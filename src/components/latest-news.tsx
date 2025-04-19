@@ -13,30 +13,30 @@ import Image from "next/image";
 const LatestNews = () => {
   const newsItems = [
     {
-      title: "Kipawa SC Youth Academy Wins Tournament",
+      title: "Kipawa Soccer Academy Youth Academy Wins Tournament",
       description:
-        "The Kipawa SC Youth Academy team emerged victorious in the regional tournament, showcasing their exceptional talent and teamwork.",
+        "The Kipawa Soccer Academy Youth Academy team emerged victorious in the regional tournament, showcasing their exceptional talent and teamwork.",
       imageUrl: "/image7.png", //  Add actual paths
       date: "2024-07-28",
     },
     {
       title: "New Training Facilities Unveiled",
       description:
-        "Kipawa SC has inaugurated state-of-the-art training facilities, providing our players with the best possible environment to hone their skills.",
+        "Kipawa Soccer Academy has inaugurated state-of-the-art training facilities, providing our players with the best possible environment to hone their skills.",
       imageUrl: "/image8.png", //  Add actual paths
       date: "2024-07-25",
     },
     {
-      title: "Kipawa SC Partners with Local School",
+      title: "Kipawa Soccer Academy Partners with Local School",
       description:
-        "Kipawa SC has partnered with [School Name] to promote football among students and provide coaching and mentorship opportunities.",
+        "Kipawa Soccer Academy has partnered with [School Name] to promote football among students and provide coaching and mentorship opportunities.",
       imageUrl: "/image9.jpeg", //  Add actual paths
       date: "2024-07-22",
     },
     {
-      title: "Kipawa SC Women's Team Secures Sponsorship",
+      title: "Kipawa Soccer Academy Women's Team Secures Sponsorship",
       description:
-        "The Kipawa SC Women's Team has secured a major sponsorship deal, boosting their preparations for the upcoming season.",
+        "The Kipawa Soccer Academy Women's Team has secured a major sponsorship deal, boosting their preparations for the upcoming season.",
       imageUrl: "/image10.png", //  Add actual paths
       date: "2024-07-20",
     },
@@ -46,10 +46,11 @@ const LatestNews = () => {
     <section className={cn("w-full py-12 px-4 sm:px-6 lg:px-8", "relative")}>
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-          Latest News
+          Kipawa Soccer Academy News
         </h2>
         <p className="mt-2 text-gray-600 max-w-3xl mx-auto">
-          Stay up-to-date with the latest news and events from Kipawa SC.
+          Stay up-to-date with the latest news and events from Kipawa Soccer
+          Academy.
         </p>
       </div>
       <Carousel
@@ -92,7 +93,7 @@ const LatestNews = () => {
                         {item.description}
                       </p>
                       <p className="text-gray-500 text-sm">Date: {item.date}</p>
-                      <Button variant="link" className="mt-4 px-0">
+                      <Button variant="link" className="mt-4 px-0 hidden">
                         Read More
                       </Button>
                     </div>

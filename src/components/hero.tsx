@@ -1,20 +1,24 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Link from "next/link";
 
 const Hero = () => {
   const coaches = [
     {
-      image: "/profile1.jpg",
-      alt: "Profile 1",
+      image: "/kempes.jpeg",
+      alt: "Sammy Kempes",
+      name: "Sammy Kempes",
     },
     {
-      image: "/profile2.jpg",
-      alt: "Profile 1",
+      image: "/ghost.jpg",
+      alt: "Jacob 'Ghost' Mulee",
+      name: "Jacob Mulee",
     },
     {
-      image: "/profile3.jpg",
-      alt: "Profile 1",
+      image: "/sholei.jpg",
+      alt: "Sammy Sholei",
+      name: "Sammy Sholei",
     },
   ];
   return (
@@ -29,7 +33,7 @@ const Hero = () => {
           <h1 className="bg-white w-fit p-3 md:p-5 rounded-ss-3xl font-semibold rounded-ee-3xl text-2xl md:text-4xl lg:text-5xl">
             <span className="text-black">Kipawa</span>{" "}
             <span className="text-red-500">Soccer</span>{" "}
-            <span className="text-green-600">Club</span>
+            <span className="text-green-600">Academy</span>
           </h1>
           <h1 className="text-4xl md:text-6xl lg:text-7xl leading-tighter  font-bold text-white">
             Shaping Tomorrow’s <br /> Football Stars, Today.
@@ -40,7 +44,8 @@ const Hero = () => {
             futures.{" "}
           </h1>
           <div className="flex md:flex-row flex-col gap-3">
-            <button
+            <Link
+              href={"/contact-us"}
               className={
                 "p-5 flex hover:bg-red-600 flex items-center justify-center duration-300 group items-center gap-4  rounded-full bg-black text-white"
               }
@@ -49,32 +54,32 @@ const Hero = () => {
                 Contact Us
               </span>
               <ArrowRight className={"w-6 h-6 group-hover:ms-2 duration-300"} />
-            </button>{" "}
-            <button
+            </Link>{" "}
+            <Link
+              href={"/about"}
               className={
                 "p-5 flex hover:bg-red-600 flex items-center justify-center duration-300 group items-center gap-4 rounded-full bg-green-700 text-white"
               }
             >
               <span className="uppercase tracking-wider font-semibold">
-                Watch Highlights
+                About Us
               </span>
               <ArrowRight className={"w-6 h-6 group-hover:ms-2 duration-300"} />
-            </button>
+            </Link>
           </div>
         </div>
 
         <div className="z-10 mt-auto">
           <div className="w-fit border p-2 rounded-full">
             <ul className="flex items-center">
-              {coaches.map((item, index) => (
+              {coaches.map((coach, index) => (
                 <li className="" key={index}>
-                  <Image
-                    src={item.image}
-                    alt={"profile image"}
-                    className={"rounded-full "}
-                    width={40}
-                    height={40}
-                  />
+                  <Avatar>
+                    <AvatarImage src={coach.image} alt={coach.alt} />
+                    <AvatarFallback>
+                      {coach.name.substring(0, 2)}
+                    </AvatarFallback>
+                  </Avatar>
                 </li>
               ))}
             </ul>

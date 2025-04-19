@@ -13,14 +13,14 @@ import { ArrowRight } from "lucide-react";
 const Faqs = () => {
   const faqs = [
     {
-      question: "What is Kipawa SC?",
+      question: "What is Kipawa Soccer Academy?",
       answer:
-        "Kipawa Soccer Club is a dedicated organization committed to developing young football talent in Kenya. We provide a supportive and challenging environment where players can grow their skills, build character, and pursue their dreams.",
+        "Kipawa Soccer Academy is a dedicated organization committed to developing young football talent in Kenya. We provide a supportive and challenging environment where players can grow their skills, build character, and pursue their dreams.",
     },
     {
-      question: "How can I join Kipawa SC?",
+      question: "How can I join Kipawa Soccer Academy?",
       answer:
-        "Information on joining Kipawa SC, including tryout schedules and registration details, can be found on our website's 'Join Us' section.  You can also contact our team directly for more information.",
+        "Information on joining Kipawa Soccer Academy, including tryout schedules and registration details, can be found on our website's 'Join Us' section.  You can also contact our team directly for more information.",
     },
     {
       question: "What age groups do you serve?",
@@ -33,14 +33,14 @@ const Faqs = () => {
         "Our training facilities are located in [Location].  Specific locations and directions can be found on our website or by contacting our team.",
     },
     {
-      question: "How can I support Kipawa SC?",
+      question: "How can I support Kipawa Soccer Academy?",
       answer:
-        "There are many ways to support Kipawa SC, including volunteering, donations, and sponsorships.  Please visit our 'Support Us' page for more information.",
+        "There are many ways to support Kipawa Soccer Academy, including volunteering, donations, and sponsorships.  Please visit our 'Support Us' page for more information.",
     },
     {
-      question: "Does Kipawa SC have a women's program?",
+      question: "Does Kipawa Soccer Academy have a women's program?",
       answer:
-        "Yes, Kipawa SC is committed to promoting women's football. We have a dedicated women's team that competes at a high level.  More information can be found on our website.",
+        "Yes, Kipawa Soccer Academy is committed to promoting women's football. We have a dedicated women's team that competes at a high level.  More information can be found on our website.",
     },
     {
       question: "What is the club's philosophy?",
@@ -66,8 +66,8 @@ const Faqs = () => {
           Frequently Asked Questions
         </h2>
         <p className="mt-2 text-gray-600 max-w-3xl mx-auto">
-          Here are some answers to common questions about Kipawa SC. If you have
-          other questions, please don't hesitate to contact us.
+          Here are some answers to common questions about Kipawa Soccer Academy.
+          If you have other questions, please don't hesitate to contact us.
         </p>
       </div>
       <div className="max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto">

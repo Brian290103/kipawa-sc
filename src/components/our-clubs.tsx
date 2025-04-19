@@ -13,13 +13,13 @@ import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 const OurClubs = () => {
   const clubs = [
     {
-      name: "Kipawa FC Youth Academy",
+      name: "Kipawa Soccer Club Youth Academy",
       description:
         "Our flagship program, dedicated to developing young talent from the grassroots level.  We provide top-tier coaching and facilities for aspiring footballers.",
       location: "Kitengela, Kenya",
       foundingYear: 2025,
       image: "/image5.png",
-      alt: "Kipawa FC Youth Academy",
+      alt: "Kipawa Soccer Academy Youth Academy",
     },
   ];
 
@@ -27,11 +27,12 @@ const OurClubs = () => {
     <section className={cn("w-full py-12 px-4 sm:px-6 lg:px-8")}>
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-          Our Clubs
+          Our Soccer Clubs
         </h2>
         <p className="mt-2 text-gray-600 max-w-3xl mx-auto">
-          Kipawa SC is organized into several clubs, each with a specific focus
-          and mission. These clubs work together to achieve our overall goals.
+          Kipawa Soccer Academy is organized into several soccer clubs, each
+          with a specific focus and mission. These clubs work together to
+          achieve our overall goals.
         </p>
       </div>
       <Carousel
@@ -114,9 +115,10 @@ const OurClubs = () => {
                       Expanding Our Reach
                     </h3>
                     <p className="text-gray-600 text-center leading-relaxed mb-4">
-                      We are actively working to establish new clubs and expand
-                      our programs to reach more young talents across Kenya.
-                      Stay tuned for updates on new locations and opportunities!
+                      We are actively working to establish new soccer academies
+                      and expand our programs to reach more young talents across
+                      Kenya. Stay tuned for updates on new locations and
+                      opportunities!
                     </p>
                   </div>
                 </div>

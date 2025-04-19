@@ -8,36 +8,36 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 const OurCoaches = () => {
   const coaches = [
     {
-      name: "Coach John Smith",
-      role: "Head Coach",
-      bio: "John has over 20 years of coaching experience, with a focus on youth development. He holds a UEFA Pro License and has a proven track record of success.",
-      avatar: "https://mighty.tools/mockmind-api/content/human/115.jpg", //  Add actual paths
-      alt: "Coach John Smith",
+      name: "Sammy Owino Kempes",
+      role: "Founder & Head Coach",
+      bio: "A legendary figure in Kenyan football, Sammy Owino Kempes brings decades of experience as both a player and a coach. His vision and passion drive Kipawa Soccer Academy's commitment to excellence.",
+      avatar: "/kempes.jpeg", //  Add actual paths
+      alt: "Sammy Owino Kempes",
     },
     {
-      name: "Coach Jane Doe",
-      role: "Assistant Coach",
-      bio: "Jane specializes in tactical analysis and player performance. She is passionate about creating a positive and supportive team environment.",
-      avatar: "https://mighty.tools/mockmind-api/content/human/82.jpg", // Add actual paths
-      alt: "Coach Jane Doe",
+      name: "Jacob 'Ghost' Mulee",
+      role: "Technical Director",
+      bio: "Known for his tactical brilliance and success with the Kenyan national team, Jacob 'Ghost' Mulee provides invaluable guidance and expertise to our coaching staff and players.",
+      avatar: "/ghost.jpg", // Add actual paths
+      alt: "Jacob 'Ghost' Mulee",
     },
     {
-      name: "Coach David Kimani",
+      name: "Sammy Sholei",
+      role: "Youth Development Coach",
+      bio: "Sammy Sholei is dedicated to nurturing young talent and instilling a love for the game in our academy players. His focus is on developing fundamental skills and fostering a positive team environment.",
+      avatar: "/sholei.jpg", // Add actual paths
+      alt: "Sammy Sholei",
+    },
+    {
+      name: "Anthony Origi",
       role: "Goalkeeping Coach",
-      bio: "David is a former professional goalkeeper with extensive experience. He is dedicated to training and mentoring our goalkeepers.",
-      avatar: "https://mighty.tools/mockmind-api/content/human/42.jpg", // Add actual paths
-      alt: "Coach David Kimani",
+      bio: "A former professional goalkeeper, Anthony Origi specializes in training and mentoring our goalkeepers. He brings a wealth of knowledge and experience to help our keepers excel.",
+      avatar: "/origi.jpg", //Add actual paths
+      alt: "Anthony Origi",
     },
   ];
 
@@ -48,7 +48,8 @@ const OurCoaches = () => {
           Our Coaches
         </h2>
         <p className="mt-2 text-gray-600 max-w-3xl mx-auto">
-          Meet the experienced and dedicated coaches who lead Kipawa SC.
+          Meet the experienced and dedicated coaches who lead Kipawa Soccer
+          Academy.
         </p>
       </div>
       <Carousel
@@ -58,39 +59,41 @@ const OurCoaches = () => {
           loop: true,
         }}
       >
+        <div className="relative w-full pb-5 flex items-center gap-3 justify-center ">
+          <CarouselPrevious
+            className={"relative  top-0 -left-0 -translate-y-0"}
+          />
+          <CarouselNext className={"relative -left-0 -translate-y-0"} />
+        </div>
         <CarouselContent>
           {coaches.map((coach, index) => (
             <CarouselItem key={index} className="md:basis-1/3">
-              <div className="p-1">
-                <Card className="transition-all duration-300 hover:shadow-lg h-full flex flex-col">
-                  <CardHeader>
-                    <div className="flex items-center gap-4">
-                      <Avatar>
-                        <AvatarImage src={coach.avatar} alt={coach.alt} />
-                        <AvatarFallback>
-                          {coach.name.substring(0, 2)}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <CardTitle className="text-lg font-semibold text-gray-900">
-                          {coach.name}
-                        </CardTitle>
-                        <CardDescription className="text-gray-500">
-                          {coach.role}
-                        </CardDescription>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="flex-1">
-                    <p className="text-gray-700 leading-relaxed">{coach.bio}</p>
-                  </CardContent>
-                </Card>
+              <div className="rounded-lg bg-white border h-full flex flex-col">
+                <div className="flex flex-col items-center gap-4 mb-4">
+                  <Avatar
+                    className={
+                      "rounded-t-xl  rounded-b-none w-full h-[300px] !object-cover"
+                    }
+                  >
+                    <AvatarImage src={coach.avatar} alt={coach.alt} />
+                    <AvatarFallback>
+                      {coach.name.substring(0, 2)}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className={"w-full px-4"}>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {coach.name}
+                    </h3>
+                    <p className="text-gray-500">{coach.role}</p>
+                  </div>
+                </div>
+                <p className="text-gray-700 p-5 leading-relaxed flex-1">
+                  {coach.bio}
+                </p>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
     </section>
   );

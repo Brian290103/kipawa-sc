@@ -9,34 +9,34 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const Testimonials = () => {
+const OurTestimonials = () => {
   const testimonials = [
     {
       name: "John Doe",
       role: "Parent",
       quote:
-        "Kipawa SC has been amazing for my son.  The coaches are dedicated, and he's developed so much as a player and a person.",
+        "Kipawa Soccer Academy has been amazing for my son.  The coaches are dedicated, and he's developed so much as a player and a person.",
       avatar: "https://mighty.tools/mockmind-api/content/human/95.jpg", //  Add actual paths
     },
     {
       name: "Jane Smith",
       role: "Player",
       quote:
-        "I've been with Kipawa SC for several years, and it's like a family.  I've made great friends and learned so much.",
+        "I've been with Kipawa Soccer Academy for several years, and it's like a family.  I've made great friends and learned so much.",
       avatar: "https://mighty.tools/mockmind-api/content/human/41.jpg", // Add actual paths
     },
     {
       name: "David Johnson",
       role: "Community Member",
       quote:
-        "Kipawa SC is a huge asset to our community.  They're doing great work with the youth and making a positive impact.",
+        "Kipawa Soccer Academy is a huge asset to our community.  They're doing great work with the youth and making a positive impact.",
       avatar: "https://mighty.tools/mockmind-api/content/human/100.jpg", // Add actual paths
     },
     {
       name: "Sarah Williams",
       role: "Sponsor",
       quote:
-        "Supporting Kipawa SC has been a rewarding experience.  Their commitment to excellence and community development is truly commendable.",
+        "Supporting Kipawa Soccer Academy has been a rewarding experience.  Their commitment to excellence and community development is truly commendable.",
       avatar: "https://mighty.tools/mockmind-api/content/human/42.jpg",
     },
   ];
@@ -55,7 +55,7 @@ const Testimonials = () => {
         </h2>
         <p className="mt-2 text-gray-600 max-w-3xl mx-auto">
           Don't just take our word for it. See what our community has to say
-          about their experience with Kipawa SC.
+          about their experience with Kipawa Soccer Academy.
         </p>
       </div>
       <Carousel
@@ -113,4 +113,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default OurTestimonials;

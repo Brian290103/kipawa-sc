@@ -1,6 +1,25 @@
 import React from "react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import MobileMenu from "@/components/mobile-menu";
+
+interface NavItemProps {
+  item: { title: string; url: string };
+}
+
+const NavItem: React.FC<NavItemProps> = ({ item }) => {
+  return (
+    <li className="font-medium border rounded-full py-3 px-5">
+      <Link
+        href={item.url}
+        className="hover:text-green-500 uppercase tracking-wider transition-colors duration-200"
+      >
+        {item.title}
+      </Link>
+    </li>
+  );
+};
 
 const Navbar = () => {
   const leftItems = [
@@ -10,25 +29,25 @@ const Navbar = () => {
     },
     {
       title: "About",
-      url: "/about", // Added route
+      url: "/about",
     },
     {
-      title: "Club",
-      url: "/club", // Added route
+      title: "Clubs",
+      url: "/clubs",
     },
   ];
   const rightItems = [
     {
-      title: "Events",
-      url: "/events", // Added route
+      title: "Testimonies",
+      url: "/testimonies",
     },
     {
       title: "News",
-      url: "/news", // Added route
+      url: "/news",
     },
     {
       title: "Contact Us",
-      url: "/contact", // Added route
+      url: "/contact-us",
     },
   ];
 
@@ -36,69 +55,48 @@ const Navbar = () => {
     <header
       className={cn(
         "w-full relative justify-between items-center flex w-full max-w-7xl mx-auto bg-white",
-        "py-4 md:py-6 px-4 md:px-8 lg:px-12  ", // Added padding for better spacing
+        "py-4 md:py-6 px-4 md:px-8 lg:px-12  ",
       )}
     >
       <nav className="hidden md:block">
         <ul className="flex items-center gap-6">
           {leftItems.map((item, index) => (
-            <li key={index} className="text-sm font-medium">
-              <a
-                href={item.url}
-                className="hover:text-blue-600 transition-colors duration-200"
-              >
-                {item.title}
-              </a>
-            </li>
+            <NavItem key={index} item={item} />
           ))}
         </ul>
       </nav>
 
       <div className="absolute z-10 left-1/2 bg-white rounded-full p-3 -translate-x-1/2 top-1 -translate-y-0">
-        <Image
-          src={"/logo.png"}
-          alt={"logo for kipawa soccer club"}
-          width={100}
-          height={100}
-          className="rounded-full" //Added rounded corners
-        />
+        <Link href="/">
+          <Image
+            src={"/logo.jpg"}
+            alt={"logo for kipawa soccer club"}
+            width={1000}
+            height={1000}
+            className="rounded-full w-[80px] h-[80px]  md:w-[120px] md:h-[120px] cursor-pointer"
+          />
+        </Link>
       </div>
 
       <nav className="hidden md:block">
         <ul className="flex items-center gap-6">
           {rightItems.map((item, index) => (
-            <li key={index} className="text-sm font-medium">
-              <a
-                href={item.url}
-                className="hover:text-blue-600 transition-colors duration-200"
-              >
-                {item.title}
-              </a>
-            </li>
+            <NavItem key={index} item={item} />
           ))}
         </ul>
       </nav>
 
-      {/* Mobile Menu (Simplified -  For full mobile menu, you'd typically use a library or more complex state) */}
-      <div className="md:hidden flex items-center">
-        {/* Placeholder for a mobile menu icon (hamburger) */}
-        <button className="text-gray-700 hover:text-blue-600 focus:outline-none focus:shadow-outline">
-          {/* Replace this with an actual icon, like a hamburger menu icon from a library (e.g., Lucide React) */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
-        </button>
+      {/* Mobile Menu  */}
+      <div className="md:hidden w-full flex justify-between  flex items-center">
+        <Link
+          href={"/"}
+          className={"flex items-center gap-0 text-xl font-semibold"}
+        >
+          <span className="text-black">KI</span>
+          <span className="text-red-600">PA</span>
+          <span className="text-green-600">WA</span>
+        </Link>
+        <MobileMenu />
       </div>
     </header>
   );
