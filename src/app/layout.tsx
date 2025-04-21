@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kipawa Soccer Academy",
   description:
-    "Kipawa Soccer Academy is a dedicated organization committed to developing young football talent. We provide a supportive and challenging environment where players can grow their skills, build character, and pursue their dreams. Our focus extends beyond the field, as we aim to empower our athletes to become leaders in their communities.",
+    "Kipawa Soccer Academy is a dedicated organization committed to developing young football talent. We provide a supportive and challenging environment where players can grow their skills, build character, and pursue their dreams. Our focus extends beyond the field, as we aim to empower our athletes to become leaders in their communities..",
 };
 
 export default function RootLayout({
