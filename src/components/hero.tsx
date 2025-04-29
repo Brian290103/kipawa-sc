@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const coaches = [
@@ -21,8 +24,43 @@ const Hero = () => {
       name: "Sammy Sholei",
     },
   ];
+
+  const heroVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.5 } },
+  };
+
+  const titleVariants = {
+    initial: { y: -50, opacity: 0 },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
+  };
+
+  const subtitleVariants = {
+    initial: { y: -30, opacity: 0 },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.6, delay: 0.4 } },
+  };
+
+  const buttonVariants = {
+    initial: { opacity: 0, scale: 0.8 },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.4, delay: 0.6 },
+    },
+    whileHover: { scale: 1.1 },
+    whileTap: { scale: 0.95 },
+  };
+
+  const coachesVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.8 } },
+  };
+
   return (
-    <div
+    <motion.div
+      variants={heroVariants}
+      initial="initial"
+      animate="animate"
       style={{
         backgroundImage:
           "url(https://res.cloudinary.com/dcx55gmhy/image/upload/v1745923228/IMG-20250429-WA0066_p9yeib.jpg)",
@@ -34,44 +72,84 @@ const Hero = () => {
       <div className="h-full w-full bg-black opacity-50 absolute top-0 left-0 right-0 bottom-0"></div>
       <div className="w-full pt-20 lg:pt-0 grid md:grid-cols-3 gap-3">
         <div className="flex flex-col  gap-5 col-span-2 z-10">
-          <h1 className="bg-white w-fit p-3 md:p-5 rounded-ss-3xl font-semibold rounded-ee-3xl text-2xl md:text-4xl lg:text-5xl">
+          <motion.h1
+            variants={titleVariants}
+            viewport={{ once: false }}
+            initial="initial"
+            animate="animate"
+            className="bg-white w-fit p-3 md:p-5 rounded-ss-3xl font-semibold rounded-ee-3xl text-2xl md:text-4xl lg:text-5xl"
+          >
             <span className="text-black">Kipawa</span>{" "}
             <span className="text-red-500">Soccer</span>{" "}
             <span className="text-green-600">Academy</span>
-          </h1>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl leading-tighter  font-bold text-white">
+          </motion.h1>
+          <motion.h1
+            viewport={{ once: false }}
+            variants={titleVariants}
+            initial="initial"
+            animate="animate"
+            className="text-3xl md:text-5xl lg:text-6xl leading-tighter  font-bold text-white"
+          >
             Building the foundation for a great footballing nation:
             <br />
             One player at a time.
-          </h1>
-          <h1 className="text-base md:text-xl text-white">
+          </motion.h1>
+          <motion.h1
+            viewport={{ once: false }}
+            variants={subtitleVariants}
+            initial="initial"
+            animate="animate"
+            className="text-base md:text-xl text-white"
+          >
             Empowering Kenya’s youth through football:
             <br />
             Developing talent and providing a pathway for greatness.
-          </h1>
+          </motion.h1>
           <div className="flex md:flex-row flex-col gap-3">
-            <Link
-              href={"/contact-us"}
-              className={
-                "p-5 flex hover:bg-red-600 flex items-center justify-center duration-300 group items-center gap-4  rounded-full bg-black text-white"
-              }
+            <motion.div
+              viewport={{ once: false }}
+              variants={buttonVariants}
+              initial="initial"
+              animate="animate"
+              whileHover="whileHover"
+              whileTap="whileTap"
             >
-              <span className="uppercase tracking-wider font-semibold">
-                Contact Us
-              </span>
-              <ArrowRight className={"w-6 h-6 group-hover:ms-2 duration-300"} />
-            </Link>{" "}
-            <Link
-              href={"/about-us"}
-              className={
-                "p-5 flex hover:bg-red-600 flex items-center justify-center duration-300 group items-center gap-4 rounded-full bg-green-700 text-white"
-              }
+              <Link
+                href={"/contact-us"}
+                className={
+                  "p-5 flex hover:bg-red-600 flex items-center justify-center duration-300 group items-center gap-4  rounded-full bg-black text-white"
+                }
+              >
+                <span className="uppercase tracking-wider font-semibold">
+                  Contact Us
+                </span>
+                <ArrowRight
+                  className={"w-6 h-6 group-hover:ms-2 duration-300"}
+                />
+              </Link>
+            </motion.div>{" "}
+            <motion.div
+              viewport={{ once: false }}
+              variants={buttonVariants}
+              initial="initial"
+              animate="animate"
+              whileHover="whileHover"
+              whileTap="whileTap"
             >
-              <span className="uppercase tracking-wider font-semibold">
-                About Us
-              </span>
-              <ArrowRight className={"w-6 h-6 group-hover:ms-2 duration-300"} />
-            </Link>
+              <Link
+                href={"/about-us"}
+                className={
+                  "p-5 flex hover:bg-red-600 flex items-center justify-center duration-300 group items-center gap-4 rounded-full bg-green-700 text-white"
+                }
+              >
+                <span className="uppercase tracking-wider font-semibold">
+                  About Us
+                </span>
+                <ArrowRight
+                  className={"w-6 h-6 group-hover:ms-2 duration-300"}
+                />
+              </Link>
+            </motion.div>
           </div>
         </div>
 
@@ -96,7 +174,7 @@ const Hero = () => {
           </p>
         </div>
       </div>{" "}
-    </div>
+    </motion.div>
   );
 };
 

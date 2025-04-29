@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const AboutUs = () => {
   const teamInfo = [
@@ -42,20 +45,58 @@ const AboutUs = () => {
     text: "white",
     hoverBg: "red-600",
   };
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeInOut" },
+    },
+  };
 
+  const titleVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } },
+  };
+
+  const paragraphVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 0.4 } },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: (i: number) => ({
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, delay: 0.3 + i * 0.2 },
+    }),
+  };
   return (
-    <section className="flex flex-col items-center gap-6 px-4 py-16 text-center">
-      <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+    <motion.section
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="flex flex-col items-center gap-6 px-4 py-16 text-center"
+    >
+      <motion.h2
+        variants={titleVariants}
+        className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight"
+      >
         Who We Are
-      </h2>
-      <p className="max-w-2xl hidden text-sm sm:text-base text-gray-600 leading-relaxed">
+      </motion.h2>
+      <motion.p
+        variants={paragraphVariants}
+        className="max-w-2xl hidden text-sm sm:text-base text-gray-600 leading-relaxed"
+      >
         Kipawa Soccer Academy is a dedicated organization committed to
         developing young football talent. We provide a supportive and
         challenging environment where players can grow their skills, build
         character, and pursue their dreams. Our focus extends beyond the field,
         as we aim to empower our athletes to become leaders in their
         communities.
-      </p>
+      </motion.p>
 
       {/*<KipawaButton*/}
       {/*  url={"/about-us"} // Use the exported component*/}
@@ -67,7 +108,12 @@ const AboutUs = () => {
       {/* Info Grid */}
       <div className="grid grid-cols-1 w-full  mx-auto sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
         {teamInfo.map((item, index) => (
-          <div
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            custom={index}
             key={index}
             className={cn(
               "rounded-xl shadow group bg-neutral-50 h-fit overflow-hidden",
@@ -87,10 +133,10 @@ const AboutUs = () => {
               <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
               <p className=" leading-relaxed">{item.description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
