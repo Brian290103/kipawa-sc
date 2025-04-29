@@ -14,7 +14,7 @@ const WhatsappButton = () => {
   );
 
   const phoneNumber = "254768425253";
-  const recipientName = "Sammy Owino Kempes";
+  const recipientName = "Kipawa Soccer Club";
 
   const handleStartChat = () => {
     const finalMessage =
@@ -58,7 +58,7 @@ const WhatsappButton = () => {
             <div className="flex bg-green-500 p-3 items-center justify-between">
               <div className="flex items-center gap-3">
                 <Avatar>
-                  <AvatarImage src="/images/kempes-passport.jpg" />
+                  <AvatarImage src="/images/logo.jpg" />
                   <AvatarFallback>SO</AvatarFallback>
                 </Avatar>
                 <div className="text-white">
