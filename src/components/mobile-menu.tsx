@@ -58,6 +58,10 @@ const MobileMenu = () => {
   ];
   const rightItems = [
     {
+      title: "Gallery",
+      url: "/gallery",
+    },
+    {
       title: "News",
       url: "/news",
     },

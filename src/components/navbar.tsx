@@ -33,10 +33,10 @@ const Navbar = () => {
     },
   ];
   const rightItems = [
-    // {
-    //   title: "Testimonies",
-    //   url: "/testimonies",
-    // },
+    {
+      title: "Gallery",
+      url: "/gallery",
+    },
     {
       title: "News",
       url: "/news",
