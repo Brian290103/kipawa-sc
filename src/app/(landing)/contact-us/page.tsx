@@ -54,7 +54,7 @@ const ContactUs = () => {
           <Card className="">
             <CardHeader>
               <CardTitle className="font-semibold flex items-center">
-                <Mail className={"mr-4 "} /> WhatsApp
+                <Mail className={"mr-4 "} /> Email
               </CardTitle>
             </CardHeader>
             <CardContent>
