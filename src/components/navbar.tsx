@@ -28,19 +28,15 @@ const Navbar = () => {
       url: "/",
     },
     {
-      title: "About",
-      url: "/about",
-    },
-    {
-      title: "Clubs",
-      url: "/clubs",
+      title: "About Us",
+      url: "/about-us",
     },
   ];
   const rightItems = [
-    {
-      title: "Testimonies",
-      url: "/testimonies",
-    },
+    // {
+    //   title: "Testimonies",
+    //   url: "/testimonies",
+    // },
     {
       title: "News",
       url: "/news",
@@ -54,7 +50,7 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "w-full relative justify-between items-center flex w-full max-w-7xl mx-auto bg-white",
+        "w-full relative  justify-between items-center flex w-full max-w-7xl mx-auto bg-white",
         "py-4 md:py-6 px-4 md:px-8 lg:px-12  ",
       )}
     >

@@ -4,11 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
+import { footerLinks } from "@/data/footerLinks";
+import { SocialLinks } from "@/data/socialLinks";
 
 const Footer = () => {
   return (
     <footer className="w-full bg-white border-t text-gray-900 ">
-      <section className="flex  flex-col md:flex-row items-center justify-between gap-6 px-4 sm:px-6 lg:px-8 py-8 border-b">
+      <section className="grid hidden grid-cols-2 gap-3 items-center justify-between gap-6 px-4 sm:px-6 lg:px-8 py-8 border-b">
         <h1 className="text-2xl font-bold">
           Join our newsletter to <br />
           keep you updated with us!
@@ -35,116 +38,70 @@ const Footer = () => {
         </div>
       </section>
 
-      <section className="w-full py-8 px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-start gap-8">
-        <article className="flex flex-col items-start gap-4">
+      <section className="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col items-center justify-between gap-3 justify-between items-start gap-8">
+        <article className="flex flex-col max-w-xl items-start gap-4 col-span-1">
           <Image
-            src={"/logo.jpg"}
-            alt={"Kipawa Soccer Academy Logo"}
+            src="/logo.jpg"
+            alt="Kipawa Soccer Academy Logo"
             width={80}
             height={80}
             className="rounded-full"
           />
           <h1 className="text-xl font-semibold">Kipawa Soccer Academy</h1>
           <p className="text-gray-600">
-            Kipawa Soccer Academy is a leading football club dedicated to
-            developing talent and promoting the sport in Kenya.
+            Kipawa Soccer Academy is dedicated to improving the level of youth
+            football in the country by helping create an infrastructure, improve
+            standard of coaching and provide clear pathway for a player.
           </p>
+
+          <ul className="flex items-center gap-4">
+            {SocialLinks.map((item, index) => (
+              <li key={index}>
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-transform "
+                >
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={30}
+                    height={30}
+                    className="grayscale hover:grayscale-0 transition-all duration-300 hover:scale-125"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
         </article>
 
-        <article className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4   gap-8 md:gap-16">
-          {/* 4 menu links in each ul */}
-          <ul className="space-y-2">
-            <li className="font-semibold text-gray-900">Quick Links</li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Teams
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                News
-              </a>
-            </li>
-          </ul>
-          <ul className="space-y-2">
-            <li className="font-semibold text-gray-900">Club Info</li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Mission
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Vision
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                History
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <ul className="space-y-2">
-            <li className="font-semibold text-gray-900">Resources</li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Schedule
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Results
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Standings
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                FAQ
-              </a>
-            </li>
-          </ul>
-          <ul className="space-y-2">
-            <li className="font-semibold text-gray-900">Legal</li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Terms of Use
-              </a>
-            </li>
-          </ul>
+        <article className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-16">
+          {footerLinks.map((group, idx) => (
+            <ul key={idx} className="space-y-2">
+              <li className="font-semibold text-gray-900">{group.title}</li>
+              {group.links.map((link, i) => (
+                <li key={i}>
+                  <Link
+                    href={link.href}
+                    className="hover:text-green-500 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ))}
         </article>
       </section>
       <section className="w-full  py-6  px-4 sm:px-6 lg:px-8  border-t mt-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between">
-          <p className="text-gray-600">
+        <div className="flex flex-col sm:flex-row items-center justify-center">
+          <p className="text-gray-600 text-center">
             &copy; {new Date().getFullYear()} Kipawa Soccer Academy. All rights
             reserved.
           </p>
 
-          <div className="flex gap-4 text-gray-600">
+          <div className="flex gap-4 hidden text-gray-600">
             <a href="#" className="hover:text-blue-500 transition-colors">
               Terms of Service
             </a>

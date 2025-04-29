@@ -35,13 +35,15 @@ const Hero = () => {
             <span className="text-red-500">Soccer</span>{" "}
             <span className="text-green-600">Academy</span>
           </h1>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl leading-tighter  font-bold text-white">
-            Shaping Tomorrow’s <br /> Football Stars, Today.
+          <h1 className="text-3xl md:text-5xl lg:text-6xl leading-tighter  font-bold text-white">
+            Building the foundation for a great footballing nation:
+            <br />
+            One player at a time.
           </h1>
           <h1 className="text-base md:text-xl text-white">
-            Empowering Kenya’s youth through world-class football training{" "}
-            <br /> — nurturing talent, building champions, and shaping
-            futures.{" "}
+            Empowering Kenya’s youth through football:
+            <br />
+            Developing talent and providing a pathway for greatness.
           </h1>
           <div className="flex md:flex-row flex-col gap-3">
             <Link
@@ -56,7 +58,7 @@ const Hero = () => {
               <ArrowRight className={"w-6 h-6 group-hover:ms-2 duration-300"} />
             </Link>{" "}
             <Link
-              href={"/about"}
+              href={"/about-us"}
               className={
                 "p-5 flex hover:bg-red-600 flex items-center justify-center duration-300 group items-center gap-4 rounded-full bg-green-700 text-white"
               }
@@ -69,7 +71,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="z-10 mt-auto">
+        <div className="z-10 mt-auto hidden">
           <div className="w-fit border p-2 rounded-full">
             <ul className="flex items-center">
               {coaches.map((coach, index) => (

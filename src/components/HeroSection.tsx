@@ -29,7 +29,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             {description}
           </p>
         )}
-        <div className="pt-5">
+        <div className="pt-5 hidden">
           <ul className="flex text-lg text-white items-center gap-3">
             {breadcrumbs.map((crumb, index) => (
               <React.Fragment key={index}>

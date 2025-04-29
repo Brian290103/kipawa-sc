@@ -13,32 +13,17 @@ import Image from "next/image";
 const LatestNews = () => {
   const newsItems = [
     {
-      title: "Kipawa Soccer Academy Youth Academy Wins Tournament",
+      title:
+        "Kipawa Soccer Academy Launches First Academy at The Goal Hub, Kitengela",
+      caption:
+        "Kipawa Soccer Academy is officially open! Join us at The Goal Hub in Kitengela and be part of the future of Kenyan football.",
       description:
-        "The Kipawa Soccer Academy Youth Academy team emerged victorious in the regional tournament, showcasing their exceptional talent and teamwork.",
+        "Kipawa Soccer Academy is proud to announce the opening of its first academy at The Goal Hub, located near Acacia in Kitengela.\n" +
+        "The academy welcomes boys and girls aged 6 to 16 years old, offering world-class training and development programs designed to nurture the next generation of football talent.\n" +
+        "This marks the beginning of Kipawa’s mission to expand across Kenya, providing professional coaching and opportunities to young aspiring players nationwide.\n" +
+        "Stay tuned — more Kipawa academies are coming soon to a town near you!",
       imageUrl: "/image7.png", //  Add actual paths
       date: "2024-07-28",
-    },
-    {
-      title: "New Training Facilities Unveiled",
-      description:
-        "Kipawa Soccer Academy has inaugurated state-of-the-art training facilities, providing our players with the best possible environment to hone their skills.",
-      imageUrl: "/image8.png", //  Add actual paths
-      date: "2024-07-25",
-    },
-    {
-      title: "Kipawa Soccer Academy Partners with Local School",
-      description:
-        "Kipawa Soccer Academy has partnered with [School Name] to promote football among students and provide coaching and mentorship opportunities.",
-      imageUrl: "/image9.jpeg", //  Add actual paths
-      date: "2024-07-22",
-    },
-    {
-      title: "Kipawa Soccer Academy Women's Team Secures Sponsorship",
-      description:
-        "The Kipawa Soccer Academy Women's Team has secured a major sponsorship deal, boosting their preparations for the upcoming season.",
-      imageUrl: "/image10.png", //  Add actual paths
-      date: "2024-07-20",
     },
   ];
 

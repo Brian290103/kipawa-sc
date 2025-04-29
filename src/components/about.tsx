@@ -1,17 +1,14 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import HeadLine from "@/components/head-line";
-import { KipawaButton } from "@/components/kipawa-button";
 
 const AboutUs = () => {
   const teamInfo = [
     {
-      title: "Our History",
+      title: "Our Partners",
       description:
-        "Founded in 2025, Kipawa Soccer Academy has a rich history of developing young talent and competing at the highest levels in Kenyan football.",
-      imageUrl: "/image1.png",
+        "Our key people have established relationships with our partners in Germany, Schechter Sports, universities in the United States, and influential individuals within the country and the region, that will allow us to provide a pathway for our players.",
+      imageUrl: "/images/partners.png",
       alt: "Kipawa Soccer Academy history",
     },
     {
@@ -29,10 +26,10 @@ const AboutUs = () => {
       alt: "Team huddle showcasing unity and motivation",
     },
     {
-      title: "The Founder",
+      title: "Our Goal",
       description:
-        "Founded by football legend Sammy Owino Kempes, our club is built on a legacy of excellence and a passion for the beautiful game.",
-      imageUrl: "/kempes.jpeg",
+        "Develop Kipawa Soccer Academy nationally and work with other academies to help build the country’s youth football infrastructure by elevating coaching standards, creating a viable national youth league and providing a clear pathway to national team and beyond. ",
+      imageUrl: "/images/goal.png",
       alt: "Team huddle showcasing unity and motivation",
     },
   ];
@@ -46,11 +43,10 @@ const AboutUs = () => {
 
   return (
     <section className="flex flex-col items-center gap-6 px-4 py-16 text-center">
-      <HeadLine title={"About Us"} />
-
-      <h1 className="text-3xl md:text-5xl font-bold">Who We Are</h1>
-
-      <p className="max-w-2xl text-sm sm:text-base text-gray-600 leading-relaxed">
+      <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+        Who We Are
+      </h2>
+      <p className="max-w-2xl hidden text-sm sm:text-base text-gray-600 leading-relaxed">
         Kipawa Soccer Academy is a dedicated organization committed to
         developing young football talent. We provide a supportive and
         challenging environment where players can grow their skills, build
@@ -59,12 +55,12 @@ const AboutUs = () => {
         communities.
       </p>
 
-      <KipawaButton
-        url={"/about"} // Use the exported component
-        text="Learn More"
-        colors={kenyanFlagColors}
-        icon={<ArrowRight className="w-6 h-6 group-hover:ms-2 duration-300" />}
-      />
+      {/*<KipawaButton*/}
+      {/*  url={"/about-us"} // Use the exported component*/}
+      {/*  text="Learn More"*/}
+      {/*  colors={kenyanFlagColors}*/}
+      {/*  icon={<ArrowRight className="w-6 h-6 group-hover:ms-2 duration-300" />}*/}
+      {/*/>*/}
 
       {/* Info Grid */}
       <div className="grid grid-cols-1 w-full max-w-7xl mx-auto sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
@@ -73,7 +69,7 @@ const AboutUs = () => {
             key={index}
             className={cn(
               "rounded-xl shadow group bg-neutral-50 h-fit overflow-hidden",
-              index === 1 || index === 2 ? "lg:mt-12" : "", // Add mt-8 for index 1 and 2
+              "",
             )}
           >
             <div className="relative overflow-hidden">

@@ -31,15 +31,15 @@ const MobileMenuItem: React.FC<NavItemProps> = ({ item, index, setOpen }) => {
         className="flex w-full"
         onClick={() => setOpen(false)}
       >
-        <Button
-          className={cn("w-full items-center justify-start")}
-          variant={"outline"}
-          size={"lg"}
+        <div
+          className={cn(
+            "w-full items-center justify-start backdrop-blur flex p-3 border rounded-xl gap-3 hover:bg-white",
+          )}
         >
           <Volleyball className={cn("w-4 h-4", `text-${color}`)} />
           <span className="hidden text-red-500 text-green-500"></span>
           {item.title}
-        </Button>
+        </div>
       </Link>
     </li>
   );
@@ -52,19 +52,11 @@ const MobileMenu = () => {
       url: "/",
     },
     {
-      title: "About",
-      url: "/about",
-    },
-    {
-      title: "Clubs",
-      url: "/clubs",
+      title: "About Us",
+      url: "/about-us",
     },
   ];
   const rightItems = [
-    {
-      title: "Testimonies",
-      url: "/testimonies",
-    },
     {
       title: "News",
       url: "/news",
@@ -85,10 +77,16 @@ const MobileMenu = () => {
             <Menu />
           </Button>
         </SheetTrigger>
-        <SheetContent side={"left"} className="max-w-sm bg-white">
-          <SheetHeader className="text-left">
+        <SheetContent
+          side={"left"}
+          className="max-w-sm bg-white bg-[url(/images/soccer-field.jpg)] bg-cover bg-center"
+        >
+          <SheetHeader className="text-left backdrop-blur">
             <SheetTitle>KIPAWA Soccer Academy</SheetTitle>
-            <SheetDescription>KIPAWA</SheetDescription>
+            <SheetDescription className={"text-black"}>
+              Building the foundation for a great footballing nation: One player
+              at a time.
+            </SheetDescription>
           </SheetHeader>
 
           {/* Render the menu here */}

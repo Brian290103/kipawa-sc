@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import HeadLine from "@/components/head-line";
 
 const MissionVision = () => {
   const list = [
@@ -9,13 +8,13 @@ const MissionVision = () => {
       title: "Our Mission",
       icon: "/icons/mission.png", //  Make sure these paths are correct
       caption:
-        "To identify, nurture, and promote young football talent in Kenya, providing them with the platform to achieve their full potential.",
+        "Develop players to their full potential and provide a pathway for them to play professional football locally or overseas, attain football scholarship in the United States, and pursue non-playing football career. ",
     },
     {
       title: "Our Vision",
       icon: "/icons/vision.png", // Make sure these paths are correct
       caption:
-        "To be the leading football academy in Kenya, recognized for producing world-class players and empowering communities through sports.",
+        "To develop players to their full potential and in the process also help them develop character traits that will serve them well for the rest of their lives.",
     },
   ];
   return (
@@ -26,9 +25,9 @@ const MissionVision = () => {
       )}
     >
       <div className="text-center mb-8 flex-col gap-3 flex">
-        <div className="flex ">
-          <HeadLine title={"Mission and Vision"} />
-        </div>
+        {/*<div className="flex ">*/}
+        {/*  <HeadLine title={"Mission and Vision"} />*/}
+        {/*</div>*/}
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
           Our Mission & Vision
         </h2>

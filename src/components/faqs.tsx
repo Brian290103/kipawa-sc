@@ -13,46 +13,33 @@ import { ArrowRight } from "lucide-react";
 const Faqs = () => {
   const faqs = [
     {
-      question: "What is Kipawa Soccer Academy?",
+      question: "Who is Kipawa Soccer Academy?",
       answer:
-        "Kipawa Soccer Academy is a dedicated organization committed to developing young football talent in Kenya. We provide a supportive and challenging environment where players can grow their skills, build character, and pursue their dreams.",
+        "Kipawa Soccer Academy is dedicated to the true development of boys and girls youth players. Beyond player development, we provide a pathway for players to play professionally locally, in Germany, and to universities in the USA. We also provide opportunities for players to pursue non-playing careers.",
     },
     {
-      question: "How can I join Kipawa Soccer Academy?",
-      answer:
-        "Information on joining Kipawa Soccer Academy, including tryout schedules and registration details, can be found on our website's 'Join Us' section.  You can also contact our team directly for more information.",
+      question: "What age group do we serve?",
+      answer: "We serve boys and girls from 6 to 16 years of age.",
     },
     {
-      question: "What age groups do you serve?",
+      question: "Where are training facilities located?",
       answer:
-        "We offer programs for a wide range of age groups, typically from U[Age] to U[Age]. Please check our website or contact us for specific age group information.",
+        "We only have one program at the moment, and it is located at “The Goal Hub” in Kitengela near Acacia. We plan to open multiple programs countrywide. We will keep you updated.",
     },
     {
-      question: "Where are your training facilities located?",
+      question: "Does Kipawa Soccer Academy have a women’s program?",
       answer:
-        "Our training facilities are located in [Location].  Specific locations and directions can be found on our website or by contacting our team.",
+        "Kipawa Soccer Academy is for both boys and girls. We believe in providing opportunity for girls and believe that the future for women’s football is very bright. We invite and encourage girls to come join us.",
     },
     {
-      question: "How can I support Kipawa Soccer Academy?",
-      answer:
-        "There are many ways to support Kipawa Soccer Academy, including volunteering, donations, and sponsorships.  Please visit our 'Support Us' page for more information.",
-    },
-    {
-      question: "Does Kipawa Soccer Academy have a women's program?",
-      answer:
-        "Yes, Kipawa Soccer Academy is committed to promoting women's football. We have a dedicated women's team that competes at a high level.  More information can be found on our website.",
-    },
-    {
-      question: "What is the club's philosophy?",
-      answer:
-        "Our club's philosophy is centered around holistic player development, focusing not only on football skills but also on character building, sportsmanship, and academic excellence.",
-    },
-    {
-      question: "How can I get updates on team schedules and news?",
-      answer:
-        "You can stay updated on team schedules, news, and events by following our social media channels and subscribing to our newsletter.  Check our website for links and subscription details.",
+      question: "What does it cost to join the program?",
+      answer: `The cost for joining the program varies with location, but the cost for “The Goal Hub” in Kitengela is as follows:
+- Annual registration fees – KES 12,000
+- Two sessions a week – KES 6,000
+- Three sessions a week – KES 8,000`,
     },
   ];
+
   const kenyanFlagColors = {
     bg: "green-700",
     text: "white",
@@ -104,7 +91,8 @@ const Faqs = () => {
             </p>
             <div className="flex justify-center">
               <KipawaButton
-                text={"Get in Touch"}
+                text={"Contact US"}
+                url={"/contact-us"}
                 colors={kenyanFlagColors}
                 icon={<ArrowRight className={"w-6 h-6 ms-2 text-white"} />}
               />

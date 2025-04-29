@@ -31,7 +31,7 @@ const ContactUs = () => {
       </div>
 
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63815.44447762496!2d36.87431771397673!3d-1.4922058595138734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182fa029a32ea761%3A0x1b98a0c9cee3a824!2sKitengela!5e0!3m2!1ssw!2ske!4v1745077112589!5m2!1ssw!2ske"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4026902193355!2d36.94142057477783!3d-1.5263312984593642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182fa12c8b0b0e0f%3A0xfad5967e60a96fde!2sThe%20Goalhub%20Sports%20and%20Fitness%20Center!5e0!3m2!1sen!2ske!4v1745911648963!5m2!1sen!2ske"
         height="600"
         allowFullScreen=""
         className={"w-full"}
