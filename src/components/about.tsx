@@ -14,15 +14,17 @@ const AboutUs = () => {
     {
       title: "Our Approach",
       description:
-        "We employ a holistic approach to player development, focusing on technical skills, tactical awareness, physical conditioning, and character building.",
-      imageUrl: "/image2.png",
+        "We employ a holistic approach to player development, focusing on technical skills, tactical awareness, physical conditioning, and character building. We believe in nurturing each child’s potential both on and off the pitch by combining structured training with mentorship and academic support.",
+      imageUrl:
+        "https://res.cloudinary.com/dcx55gmhy/image/upload/v1745923275/IMG-20250429-WA0038_d0lbhf.jpg",
       alt: "Kipawa Soccer Academy approach",
     },
     {
       title: "Our Values",
       description:
-        "Discipline, Integrity, Teamwork, Excellence, and Passion. These values guide everything we do, on and off the field.",
-      imageUrl: "/image3.png",
+        "Discipline, Integrity, Teamwork, Excellence, and Passion. These values guide everything we do, on and off the field. We foster an environment that promotes fairness, respect, and hard work. By instilling strong values in our players, we aim to develop not only exceptional athletes but also responsible and respectful citizens who positively impact their communities.",
+      imageUrl:
+        "https://res.cloudinary.com/dcx55gmhy/image/upload/v1745923222/IMG-20250429-WA0062_kcenfs.jpg",
       alt: "Team huddle showcasing unity and motivation",
     },
     {
@@ -63,7 +65,7 @@ const AboutUs = () => {
       {/*/>*/}
 
       {/* Info Grid */}
-      <div className="grid grid-cols-1 w-full max-w-7xl mx-auto sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+      <div className="grid grid-cols-1 w-full  mx-auto sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
         {teamInfo.map((item, index) => (
           <div
             key={index}

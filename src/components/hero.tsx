@@ -23,8 +23,12 @@ const Hero = () => {
   ];
   return (
     <div
+      style={{
+        backgroundImage:
+          "url(https://res.cloudinary.com/dcx55gmhy/image/upload/v1745923228/IMG-20250429-WA0066_p9yeib.jpg)",
+      }}
       className={
-        "bg-[url(/hero1.png)] bg-left md:bg-[url(/hero3.png)] relative  min-h-screen w-full bg-no-repeat bg-cover flex items-center p-5"
+        "bg-center relative  min-h-screen w-full bg-no-repeat bg-cover flex items-center p-5"
       }
     >
       <div className="h-full w-full bg-black opacity-50 absolute top-0 left-0 right-0 bottom-0"></div>

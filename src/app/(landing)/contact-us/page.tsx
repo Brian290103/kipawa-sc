@@ -2,12 +2,13 @@ import React from "react";
 import HeroSection from "@/components/HeroSection";
 import ContactForm from "@/components/form/contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Mail, Phone } from "lucide-react";
 
 const ContactUs = () => {
   return (
     <div>
       <HeroSection
-        imageUrl="/image5.png" // Use a relevant image
+        imageUrl="https://res.cloudinary.com/dcx55gmhy/image/upload/v1745923207/IMG-20250429-WA0044_ctzliv.jpg" // Use a relevant image
         title="Contact Us"
         description="Get in touch with us for any inquiries, feedback, or support. We'd love to hear from you!"
         breadcrumbs={[
@@ -15,8 +16,8 @@ const ContactUs = () => {
           { label: "Contact Us", href: "/contact-us" },
         ]}
       />
-      <div className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-xl mx-auto">
+      <div className="py-12 px-4 grid md:grid-cols-2 gap-3 grid-cols-1 sm:px-6 lg:px-8 w-full max-w-5xl mx-auto">
+        <div className="w-full mx-auto">
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold">
@@ -25,6 +26,44 @@ const ContactUs = () => {
             </CardHeader>
             <CardContent>
               <ContactForm />
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          {/* WhatsApp Card */}
+          <Card className="">
+            <CardHeader>
+              <CardTitle className="font-semibold flex items-center">
+                <Phone className={"mr-4 "} /> WhatsApp
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <a
+                href="https://wa.me/254768425253?text=Hello%20Sammy%2C%20I%27m%20interested%20in%20joining%20Kipawa%20Soccer%20Academy."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-600 font-medium hover:underline"
+              >
+                +254 768 425 253
+              </a>
+            </CardContent>
+          </Card>
+
+          {/* Email Card */}
+          <Card className="">
+            <CardHeader>
+              <CardTitle className="font-semibold flex items-center">
+                <Mail className={"mr-4 "} /> WhatsApp
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <a
+                href="mailto:admin@kipawa-sc.co.ke"
+                className="text-blue-600 font-medium hover:underline"
+              >
+                admin@kipawa-sc.co.ke
+              </a>
             </CardContent>
           </Card>
         </div>

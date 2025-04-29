@@ -19,8 +19,9 @@ const OurCoaches = () => {
     },
     {
       name: "Anthony Origi",
-      bio: "Former Kemya Breweries (now Tusker) Football Club.  He comes from a great football family that includes Michael Okoth, Divock Origi and Austin Oduor. He is a former founder of Aspire Academy of East Africa. He is also a human resources consultant.",
-      avatar: "/images/placeholder.png", //Add actual paths
+      bio: "Former Kenya Breweries (now Tusker) Football Club.  He comes from a great football family that includes Michael Okoth, Divock Origi and Austin Oduor. He is a former founder of Aspire Academy of East Africa. He is also a human resources consultant.",
+      avatar:
+        "https://res.cloudinary.com/dcx55gmhy/image/upload/v1745924308/2b5d01a3-ba48-45bd-95da-a249ef911561.png", //Add actual paths
       alt: "Anthony Origi",
     },
     {
