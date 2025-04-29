@@ -58,7 +58,7 @@ const WhatsappButton = () => {
             <div className="flex bg-green-500 p-3 items-center justify-between">
               <div className="flex items-center gap-3">
                 <Avatar>
-                  <AvatarImage src="/images/logo.jpg" />
+                  <AvatarImage src="/logo.jpg" />
                   <AvatarFallback>SO</AvatarFallback>
                 </Avatar>
                 <div className="text-white">
