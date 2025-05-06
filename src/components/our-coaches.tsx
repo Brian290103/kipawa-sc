@@ -64,14 +64,19 @@ const OurCoaches = () => {
         </div>
         <CarouselContent>
           {coaches.map((coach, index) => (
-            <CarouselItem key={index} className="md:basis-1/4">
+            <CarouselItem
+              key={index}
+              className="sm:basis-1/2 md:basis-1/2 lg:basis-1/3 xl:lg:basis-1/4"
+            >
               <div className="rounded-xl overflow-hidden bg-white border h-full flex flex-col">
                 <div className="flex flex-col items-center gap-4 mb-4">
                   <Image
                     src={coach.avatar}
                     alt={coach.alt}
                     width={800}
-                    className={"w-full h-[350px] object-cover"}
+                    className={
+                      "w-full h-[400px] scale-100 object-top object-cover"
+                    }
                     height={1000}
                   />
 

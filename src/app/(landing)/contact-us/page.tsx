@@ -59,10 +59,10 @@ const ContactUs = () => {
             </CardHeader>
             <CardContent>
               <a
-                href="mailto:admin@kipawa-sc.co.ke"
+                href="mailto:kipawasocceracademy@gmail.com"
                 className="text-blue-600 font-medium hover:underline"
               >
-                admin@kipawa-sc.co.ke
+                kipawasocceracademy@gmail.com
               </a>
             </CardContent>
           </Card>

@@ -125,8 +125,8 @@ const AboutUs = () => {
                 src={item.imageUrl}
                 alt={item.alt}
                 width={600}
-                height={400}
-                className="object-cover object-top group-hover:scale-150 w-full duration-300 h-64"
+                height={600}
+                className="object-center object-cover object-top group-hover:scale-150 w-full duration-300 h-84 md:h-52"
               />
             </div>
             <div className="p-6">

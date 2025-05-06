@@ -69,7 +69,7 @@ const Navbar = () => {
             alt={"logo for kipawa soccer club"}
             width={1000}
             height={1000}
-            className="rounded-full w-[80px] h-[80px]  md:w-[120px] md:h-[120px] cursor-pointer"
+            className="rounded-full w-[130px] h-[130px] md:w-[120px] md:h-[120px]   md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[200px] cursor-pointer"
           />
         </Link>
       </div>
