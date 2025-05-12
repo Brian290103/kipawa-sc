@@ -88,7 +88,7 @@ const Hero = () => {
             variants={titleVariants}
             initial="initial"
             animate="animate"
-            className="text-3xl md:text-5xl lg:text-6xl leading-tighter  font-bold text-white"
+            className="t text-3xl md:text-5xl lg:text-6xl leading-tighter  font-bold text-white"
           >
             Building a great football nation:
             <br />
