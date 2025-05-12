@@ -116,7 +116,7 @@ const AboutUs = () => {
             custom={index}
             key={index}
             className={cn(
-              "rounded-xl shadow group bg-neutral-50 h-fit overflow-hidden",
+              "rounded-xl shadow group bg-neutral-50 h-full overflow-hidden",
               "",
             )}
           >
@@ -126,7 +126,7 @@ const AboutUs = () => {
                 alt={item.alt}
                 width={600}
                 height={600}
-                className="object-center object-cover object-top group-hover:scale-150 w-full duration-300 h-84 md:h-52"
+                className="object-center object-cover object-top group-hover:scale-150 w-full duration-300 h-84 md:h-52 lg:h-64"
               />
             </div>
             <div className="p-6">

@@ -14,15 +14,13 @@ const OurCoaches = () => {
     {
       name: "Sammy Owino 'Kempes'",
       bio: "Former player of Harambee Stars, Gor Mahia and Luo Union.  Founder of AYSES Soccer Academy in the United States and professional club Texas Lighting.  Has a wealth of experience in the corporate world and coach. Experienced in development of physical and soft football infrastructure.",
-      avatar: "/images/kempes.jpg", //  Add actual paths
+      avatar: "/images/kempes-cropped.jpg", //  Add actual paths
       alt: "Sammy Owino Kempes",
     },
     {
       name: "Anthony Origi",
       bio: "Former Kenya Breweries (now Tusker) Football Club.  He comes from a great football family that includes Michael Okoth, Divock Origi and Austin Oduor. He is a former founder of Aspire Academy of East Africa. He is also a human resources consultant.",
-      avatar:
-        "https://res.cloudinary.com/dcx55gmhy/image/upload/v1745924308/2b5d01a3-ba48-45bd-95da-a249ef911561.png", //Add actual paths
-      alt: "Anthony Origi",
+      avatar: "/images/origi-cropped.jpg", //  Add actual paths      alt: "Anthony Origi",
     },
     {
       name: "Jacob 'Ghost' Mulee",
