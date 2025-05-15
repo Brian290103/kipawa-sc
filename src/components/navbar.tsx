@@ -1,21 +1,28 @@
+"use client";
+
 import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import MobileMenu from "@/components/mobile-menu";
+import { usePathname } from "next/navigation";
 
 interface NavItemProps {
   item: { title: string; url: string };
 }
 
 const NavItem: React.FC<NavItemProps> = ({ item }) => {
+  const pathName = usePathname();
+
   return (
-    <li className="font-medium border rounded-full py-3 px-5">
+    <li
+      className={`font-medium border ${pathName == item.url && "border-transparent bg-green-600"} hover:bg-red-500  rounded-full `}
+    >
       <Link
         href={item.url}
-        className="hover:text-green-500 uppercase tracking-wider transition-colors duration-200"
+        className={`hover:text-white ${pathName == item.url && "text-white "} uppercase tracking-wider `}
       >
-        {item.title}
+        <div className={" py-3 px-5"}>{item.title}</div>
       </Link>
     </li>
   );
@@ -69,7 +76,7 @@ const Navbar = () => {
             alt={"logo for kipawa soccer club"}
             width={1000}
             height={1000}
-            className="rounded-full w-[130px] h-[130px] md:w-[120px] md:h-[120px]   md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[200px] cursor-pointer"
+            className="rounded-full hover:animate-spin  w-[130px] h-[130px] md:w-[120px] md:h-[120px]   md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[200px] cursor-pointer"
           />
         </Link>
       </div>

@@ -3,14 +3,26 @@ import HeroSection from "@/components/HeroSection";
 import ContactForm from "@/components/form/contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone } from "lucide-react";
+import { getPageByPageName } from "@/actions/pageActions";
+import { generateSEOMetadata } from "@/components/seo-metadata";
 
-const ContactUs = () => {
+export async function generateMetadata() {
+  const page = await getPageByPageName("contact-us");
+
+  return generateSEOMetadata({
+    title: page!!.title,
+    description: page!!.description,
+    image: page!!.featuredImageUrl,
+  });
+}
+const ContactUs = async () => {
+  const heroData = await getPageByPageName("contact-us");
   return (
     <div>
       <HeroSection
-        imageUrl="https://res.cloudinary.com/dcx55gmhy/image/upload/v1745923207/IMG-20250429-WA0044_ctzliv.jpg" // Use a relevant image
-        title="Contact Us"
-        description="Get in touch with us for any inquiries, feedback, or support. We'd love to hear from you!"
+        imageUrl={heroData!!.featuredImageUrl} // Provide the image URL
+        title={heroData!!.title} // Provide the image URL
+        description={heroData!!.description} // Provide the image URL
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Contact Us", href: "/contact-us" },

@@ -4,7 +4,16 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
+    --font-heading1: "SaolDisplay-Regular", sans-serif;
+    --font-heading2: "Syne", sans-serif;
+    --font-heading3: "Italiana", sans-serif;
+    --font-body: "Lato", sans-serif;
+    --font-fun: "Tangerine", sans-serif;
+    --font-numeric: "Sirin Stencil", sans-serif;
+    --color-brand-primary: oklch(0.81 0.1572 89.13);
+
+
+    --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -157,4 +166,14 @@
 .gallery img:hover {
   filter: opacity(.8);
   z-index: 1;
+}
+
+
+
+.not-editable .bn-editor{
+  @apply font-body text-black  p-0;
+}
+
+.bn-editor{
+  @apply font-body text-black;
 }

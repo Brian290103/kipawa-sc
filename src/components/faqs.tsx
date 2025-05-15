@@ -9,37 +9,9 @@ import {
 import Image from "next/image";
 import { KipawaButton } from "@/components/kipawa-button";
 import { ArrowRight } from "lucide-react";
+import { FaqType } from "@/lib/types";
 
-const Faqs = () => {
-  const faqs = [
-    {
-      question: "Who is Kipawa Soccer Academy?",
-      answer:
-        "Kipawa Soccer Academy is dedicated to the true development of boys and girls youth players. Beyond player development, we provide a pathway for players to play professionally locally, in Germany, and to universities in the USA. We also provide opportunities for players to pursue non-playing careers.",
-    },
-    {
-      question: "What age group do we serve?",
-      answer: "We serve boys and girls from 6 to 16 years of age.",
-    },
-    {
-      question: "Where are training facilities located?",
-      answer:
-        "We only have one program at the moment, and it is located at “The Goal Hub” in Kitengela near Acacia. We plan to open multiple programs countrywide. We will keep you updated.",
-    },
-    {
-      question: "Does Kipawa Soccer Academy have a women’s program?",
-      answer:
-        "Kipawa Soccer Academy is for both boys and girls. We believe in providing opportunity for girls and believe that the future for women’s football is very bright. We invite and encourage girls to come join us.",
-    },
-    {
-      question: "What does it cost to join the program?",
-      answer: `The cost for joining the program varies with location, but the cost for “The Goal Hub” in Kitengela is as follows:
-- Annual registration fees – KES 12,000
-- Two sessions a week – KES 6,000
-- Three sessions a week – KES 8,000`,
-    },
-  ];
-
+const Faqs = ({ data }: { data: FaqType[] }) => {
   const kenyanFlagColors = {
     bg: "green-700",
     text: "white",
@@ -59,7 +31,7 @@ const Faqs = () => {
       </div>
       <div className="max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto">
         <Accordion type="single" collapsible className="w-full">
-          {faqs.slice(0, 6).map((faq, index) => (
+          {data.slice(0, 6).map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger>
                 <span className="text-lg font-semibold text-gray-900">
@@ -67,7 +39,11 @@ const Faqs = () => {
                 </span>
               </AccordionTrigger>
               <AccordionContent>
-                <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                <div
+                  className="text-gray-700 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: faq.answer }}
+                />
+                {/*<p className="text-gray-700 leading-relaxed">{faq.answer}</p>*/}
               </AccordionContent>
             </AccordionItem>
           ))}

@@ -16,12 +16,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   return (
     <article
-      className={`relative bg-fixed min-h-screen flex items-center justify-start bg-cover bg-top`}
+      className={`relative bg-fixed min-h-[80vh] flex items-center justify-start bg-cover bg-top`}
       style={{ backgroundImage: `url(${imageUrl})` }}
     >
-      <div className="w-full h-full bg-black/30 absolute top-0 left-0 right-0 bottom-0"></div>
+      <div className="w-full h-full bg-black/40 absolute top-0 left-0 right-0 bottom-0"></div>
       <div className="flex w-full max-w-7xl mx-auto  justify-center p-5 z-10 relative flex-col ">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-extrabold">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-extrabold">
           {title}
         </h1>
         {description && (

@@ -5,8 +5,9 @@ import { ArrowRight } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { HeroSectionType } from "@/lib/types";
 
-const Hero = () => {
+const Hero = ({ data }: { data: HeroSectionType }) => {
   const coaches = [
     {
       image: "/kempes.jpeg",
@@ -62,8 +63,7 @@ const Hero = () => {
       initial="initial"
       animate="animate"
       style={{
-        backgroundImage:
-          "url(https://res.cloudinary.com/dcx55gmhy/image/upload/v1745923228/IMG-20250429-WA0066_p9yeib.jpg)",
+        backgroundImage: `url(${data.imageUrl})`,
       }}
       className={
         "bg-center relative  min-h-screen w-full bg-no-repeat bg-cover flex items-center p-5"
@@ -90,9 +90,10 @@ const Hero = () => {
             animate="animate"
             className="t text-3xl md:text-5xl lg:text-6xl leading-tighter  font-bold text-white"
           >
-            Building a great football nation:
-            <br />
-            One player at a time.
+            {/*Building a great football nation:*/}
+            {/*<br />*/}
+            {/*One player at a time.*/}
+            <div dangerouslySetInnerHTML={{ __html: data.title }} />
           </motion.h1>
           <motion.h1
             viewport={{ once: false }}
@@ -101,9 +102,10 @@ const Hero = () => {
             animate="animate"
             className="text-base md:text-xl text-white"
           >
-            Empowering Kenya’s youth through football:
-            <br />
-            Developing talent and providing a pathway for greatness.
+            {/*Empowering Kenya’s youth through football:*/}
+            {/*<br />*/}
+            {/*Developing talent and providing a pathway for greatness.*/}
+            <div dangerouslySetInnerHTML={{ __html: data.description }} />
           </motion.h1>
           <div className="flex md:flex-row flex-col gap-3">
             <motion.div

@@ -5,40 +5,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
-const AboutUs = () => {
-  const teamInfo = [
-    {
-      title: "Our Partners",
-      description:
-        "Our key people have established relationships with our partners in Germany, Schechter Sports, universities in the United States, and influential individuals within the country and the region, that will allow us to provide a pathway for our players.",
-      imageUrl: "/images/partners.png",
-      alt: "Kipawa Soccer Academy history",
-    },
-    {
-      title: "Our Approach",
-      description:
-        "We employ a holistic approach to player development, focusing on technical skills, tactical awareness, physical conditioning, and character building. We believe in nurturing each child’s potential both on and off the pitch by combining structured training with mentorship and academic support.",
-      imageUrl:
-        "https://res.cloudinary.com/dcx55gmhy/image/upload/v1745923275/IMG-20250429-WA0038_d0lbhf.jpg",
-      alt: "Kipawa Soccer Academy approach",
-    },
-    {
-      title: "Our Values",
-      description:
-        "Discipline, Integrity, Teamwork, Excellence, and Passion. These values guide everything we do, on and off the field. We foster an environment that promotes fairness, respect, and hard work. By instilling strong values in our players, we aim to develop not only exceptional athletes but also responsible and respectful citizens who positively impact their communities.",
-      imageUrl:
-        "https://res.cloudinary.com/dcx55gmhy/image/upload/v1745923222/IMG-20250429-WA0062_kcenfs.jpg",
-      alt: "Team huddle showcasing unity and motivation",
-    },
-    {
-      title: "Our Goal",
-      description:
-        "Develop Kipawa Soccer Academy nationally and work with other academies to help build the country’s youth football infrastructure by elevating coaching standards, creating a viable national youth league and providing a clear pathway to national team and beyond. ",
-      imageUrl: "/images/goal.png",
-      alt: "Team huddle showcasing unity and motivation",
-    },
-  ];
-
+const AboutUs = ({ data }) => {
   // Define the Kenyan flag color scheme
   const kenyanFlagColors = {
     bg: "green-700",
@@ -107,7 +74,7 @@ const AboutUs = () => {
 
       {/* Info Grid */}
       <div className="grid grid-cols-1 w-full  mx-auto sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
-        {teamInfo.map((item, index) => (
+        {data.map((item, index) => (
           <motion.div
             variants={cardVariants}
             initial="hidden"
@@ -123,7 +90,7 @@ const AboutUs = () => {
             <div className="relative overflow-hidden">
               <Image
                 src={item.imageUrl}
-                alt={item.alt}
+                alt={item.title}
                 width={600}
                 height={600}
                 className="object-center object-cover object-top group-hover:scale-150 w-full duration-300 h-84 md:h-52 lg:h-64"

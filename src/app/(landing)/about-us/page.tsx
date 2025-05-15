@@ -3,22 +3,38 @@ import AboutUs from "@/components/about";
 import MissionVision from "@/components/mission-vision";
 import HeroSection from "@/components/HeroSection";
 import Faqs from "@/components/faqs";
+import { getMissionAndVisionSectionData } from "@/actions/missionAndVisionSectionActions";
+import { FaqType, LeadersSectionType } from "@/lib/types";
+import { getLeadersSectionData } from "@/actions/ourLeadersSectionActions";
+import { getFaqs } from "@/actions/faqsActions";
+import OurCoaches from "@/components/our-coaches";
+import { getWhoWeAreSectionData } from "@/actions/whoWeAreSectionActions";
+import { getPageByPageName } from "@/actions/pageActions";
+import { generateSEOMetadata } from "@/components/seo-metadata";
 
-interface ArticleProps {
-  title: string;
-  subtitle?: string;
-  description: string;
-  content?: string;
-  className?: string;
+export async function generateMetadata() {
+  const page = await getPageByPageName("about-us");
+
+  return generateSEOMetadata({
+    title: page!!.title,
+    description: page!!.description,
+    image: page!!.featuredImageUrl,
+  });
 }
+const AboutPage = async () => {
+  const missionAndVisionData = await getMissionAndVisionSectionData();
+  const ourLeadersData: LeadersSectionType[] = await getLeadersSectionData();
+  const faqsData: FaqType[] = await getFaqs();
+  const aboutData = await getWhoWeAreSectionData();
 
-const AboutPage = () => {
+  const heroData = await getPageByPageName("about-us");
+
   return (
     <section className={"w-full "}>
       <HeroSection // Use the HeroSection component
-        imageUrl="https://res.cloudinary.com/dcx55gmhy/image/upload/v1745923268/IMG-20250429-WA0032_olkct5.jpg" // Provide the image URL
-        title="About Kipawa SC" // Provide the title
-        description="Learn more about our club's partners, mission, vision, and values." // Add a description
+        imageUrl={heroData!!.featuredImageUrl} // Provide the image URL
+        title={heroData!!.title} // Provide the image URL
+        description={heroData!!.description} // Provide the image URL
         breadcrumbs={[
           // Provide breadcrumb data
           { label: "Home", href: "/" },
@@ -26,10 +42,11 @@ const AboutPage = () => {
         ]}
       />
 
-      <AboutUs />
-      <MissionVision />
+      <AboutUs data={aboutData} />
+      <MissionVision data={missionAndVisionData} />
       {/*<Sponsors />*/}
-      <Faqs />
+      <OurCoaches data={ourLeadersData} />
+      <Faqs data={faqsData} />
     </section>
   );
 };

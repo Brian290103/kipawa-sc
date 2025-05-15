@@ -8,34 +8,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { LeadersSectionType } from "@/lib/types";
 
-const OurCoaches = () => {
-  const coaches = [
-    {
-      name: "Sammy Owino 'Kempes'",
-      bio: "Former player of Harambee Stars, Gor Mahia and Luo Union.  Founder of AYSES Soccer Academy in the United States and professional club Texas Lighting.  Has a wealth of experience in the corporate world and coach. Experienced in development of physical and soft football infrastructure.",
-      avatar: "/images/kempes-cropped.jpg", //  Add actual paths
-      alt: "Sammy Owino Kempes",
-    },
-    {
-      name: "Anthony Origi",
-      bio: "Former Kenya Breweries (now Tusker) Football Club.  He comes from a great football family that includes Michael Okoth, Divock Origi and Austin Oduor. He is a former founder of Aspire Academy of East Africa. He is also a human resources consultant.",
-      avatar: "/images/origi-cropped.jpg", //  Add actual paths      alt: "Anthony Origi",
-    },
-    {
-      name: "Jacob 'Ghost' Mulee",
-      bio: "Former Breweries (now Tusker) Football Club goalkeeper and Harambee Stars Head Coach.  He is a popular broadcaster and very well connected across the country.",
-      avatar: "/ghost.jpg", // Add actual paths
-      alt: "Jacob 'Ghost' Mulee",
-    },
-    {
-      name: "Sammy Sholei",
-      bio: "Former Breweries (now Tusker) Football Club and Harambee Stars player.  Was also Vice President of Kenya Football Federation.  He also coached in KPL.  Runs multiple businesses including Warriors, an apparel company.",
-      avatar: "/images/sholei.jpg", // Add actual paths
-      alt: "Sammy Sholei",
-    },
-  ];
-
+const OurCoaches = ({ data }: { data: LeadersSectionType[] }) => {
   return (
     <section className={cn("w-full py-12 px-4 sm:px-6 lg:px-8")}>
       <div className="text-center mb-12">
@@ -61,7 +36,7 @@ const OurCoaches = () => {
           <CarouselNext className={"relative -left-0 -translate-y-0"} />
         </div>
         <CarouselContent>
-          {coaches.map((coach, index) => (
+          {data.map((coach, index) => (
             <CarouselItem
               key={index}
               className="sm:basis-1/2 md:basis-1/2 lg:basis-1/3 xl:lg:basis-1/4"
@@ -69,8 +44,8 @@ const OurCoaches = () => {
               <div className="rounded-xl overflow-hidden bg-white border h-full flex flex-col">
                 <div className="flex flex-col items-center gap-4 mb-4">
                   <Image
-                    src={coach.avatar}
-                    alt={coach.alt}
+                    src={coach.imageUrl}
+                    alt={coach.username}
                     width={800}
                     className={
                       "w-full h-[400px] scale-100 object-top object-cover"
@@ -80,12 +55,12 @@ const OurCoaches = () => {
 
                   <div className={"w-full px-4"}>
                     <h3 className="text-lg font-semibold text-gray-900">
-                      {coach.name}
+                      {coach.username}
                     </h3>
                   </div>
                 </div>
                 <p className="text-gray-700 px-5 py-1 leading-relaxed flex-1">
-                  {coach.bio}
+                  {coach.description}
                 </p>
               </div>
             </CarouselItem>

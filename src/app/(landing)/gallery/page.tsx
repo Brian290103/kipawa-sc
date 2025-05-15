@@ -3,16 +3,27 @@ import React from "react";
 import HeroSection from "@/components/HeroSection";
 import { fetchCloudinaryImages } from "@/actions/galleryActions";
 import GalleryGrid from "./gallery-grid";
+import { getPageByPageName } from "@/actions/pageActions";
+import { generateSEOMetadata } from "@/components/seo-metadata";
 
+export async function generateMetadata() {
+  const page = await getPageByPageName("gallery");
+
+  return generateSEOMetadata({
+    title: page!!.title,
+    description: page!!.description,
+    image: page!!.featuredImageUrl,
+  });
+}
 export default async function GalleryPage() {
   const { images, nextCursor } = await fetchCloudinaryImages();
-
+  const heroData = await getPageByPageName("gallery");
   return (
     <div>
       <HeroSection
-        imageUrl="https://res.cloudinary.com/dcx55gmhy/image/upload/v1745923221/IMG-20250429-WA0061_vowqvq.jpg"
-        title="Gallery"
-        description="Explore our curated collection of images capturing memorable moments, events, and the essence of our journey."
+        imageUrl={heroData!!.featuredImageUrl} // Provide the image URL
+        title={heroData!!.title} // Provide the image URL
+        description={heroData!!.description} // Provide the image URL
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Gallery", href: "/gallery" },

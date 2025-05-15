@@ -1,20 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { MissionAndVisionSectionType } from "@/lib/types";
 
-const MissionVision = () => {
+const MissionVision = ({ data }: { data: MissionAndVisionSectionType }) => {
   const list = [
     {
       title: "Our Mission",
       icon: "/icons/mission.png", //  Make sure these paths are correct
-      caption:
-        "Develop players to their full potential and provide a pathway for them to play professional football locally or overseas, attain football scholarship in the United States, and pursue non-playing football career. ",
+      caption: data.mission,
     },
     {
       title: "Our Vision",
       icon: "/icons/vision.png", // Make sure these paths are correct
-      caption:
-        "To develop players to their full potential and in the process also help them develop character traits that will serve them well for the rest of their lives.",
+      caption: data.vision,
     },
   ];
   return (
